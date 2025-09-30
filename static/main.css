@@ -1,0 +1,39 @@
+body {
+    background-color: #B0CADE;
+    margin: auto;
+    max-width: 50em;
+    font-family: sans-serif;
+}
+
+.nav {
+    background-color: white;
+    padding-top:  5px;
+    padding-bottom: 1px;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0.5em;
+}
+
+nav li {
+    display: inline-block;
+    padding: 0 1em;
+    margin: 0;
+}
+
+nav li:not(:last-of-type) {
+    border-right: 1px solid black;
+}  
+
+.content {
+    background-color: white;
+}
+
+.head {
+    text-align: center;
+}
