@@ -1,14 +1,14 @@
 body {
-    background-color: #B0CADE;
-    margin: auto;
-    max-width: 50em;
     font-family: sans-serif;
 }
 
 .nav {
-    background-color: white;
-    padding-top:  5px;
-    padding-bottom: 1px;
+    margin: auto;
+    max-width: 50em;
+    background-color: #B0CADE;
+    padding-top:  3px;
+    padding-bottom: 3px;
+    border-radius: 2em;
 }
 
 nav {
@@ -36,4 +36,32 @@ nav li:not(:last-of-type) {
 
 .head {
     text-align: center;
+}
+
+.cont {
+    margin: auto;
+    max-width: 45em;
+}
+
+.image {
+    text-align: center;
+}
+
+.image img {
+    max-width: 30%
+}
+
+.caption-image {
+    border: solid black 2px;
+    display: flex;
+}
+
+.caption-image {
+    border: solid black 2px;
+    padding-right: 2em;
+    display: flex;
+}
+
+.caption-image img {
+    padding-right: 2em;
 }
