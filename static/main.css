@@ -1,3 +1,7 @@
+html {
+    background-color: #B6D9E0;
+}
+
 body {
     font-family: sans-serif;
 }
@@ -5,10 +9,11 @@ body {
 .nav {
     margin: auto;
     max-width: 50em;
-    background-color: #B0CADE;
+    background-color: #335765;
     padding-top:  3px;
     padding-bottom: 3px;
     border-radius: 2em;
+    margin-bottom: 2em;
 }
 
 nav {
@@ -30,8 +35,8 @@ nav li:not(:last-of-type) {
     border-right: 1px solid black;
 }  
 
-.content {
-    background-color: white;
+nav a {
+    color: white;
 }
 
 .head {
