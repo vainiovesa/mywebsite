@@ -8,7 +8,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1)
 def index():
     return render_template("index.html")
 
-@app.route("/test")
+@app.route("/sus")
 def test():
     return render_template("test.html")
 
