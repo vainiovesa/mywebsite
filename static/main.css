@@ -1,5 +1,6 @@
 html {
     background-color: var(--background-color);
+    --nav-a-color: white;
 }
 
 body {
@@ -10,14 +11,12 @@ body {
 
 html:has(option[value="light"]:checked) {
   --nav-color: #335765;
-  --nav-a-color: white;
   --background-color: #B6D9E0;
   --text-color: black;
 }
 
 html:has(option[value="dark"]:checked) {
   --nav-color: #505055;
-  --nav-a-color: white;
   --background-color: #020202;
   --text-color: white;
 }
@@ -85,7 +84,7 @@ img {
   justify-content: space-between;
 }
 
-p {
+p, h2 {
   color: var(--text-color)
 }
 
@@ -98,4 +97,8 @@ select {
   width: 80px;
   padding-top: 3px;
   padding-bottom: 3px;
+}
+
+contenthead {
+  text-align: center;
 }
