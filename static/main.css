@@ -1,11 +1,30 @@
 html {
-    background-color: #B6D9E0;
+    background-color: var(--background-color);
 }
 
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+html:has(option[value="light"]:checked) {
+  --nav-color: #335765;
+  --nav-a-color: white;
+  --background-color: #B6D9E0;
+  --text-color: black;
+}
+
+html:has(option[value="dark"]:checked) {
+  --nav-color: #505055;
+  --nav-a-color: white;
+  --background-color: #020202;
+  --text-color: white;
+}
+
+html {
+  --select-background-color: var(--nav-color);
+  --select-text-color: var(--nav-a-color)
 }
 
 .content {
@@ -16,11 +35,11 @@ body {
 .nav {
   width: min(1000px, 90%);
   margin: auto;
-  background-color: #335765;
+  background-color: var(--nav-color);
   padding-top:  3px;
   padding-bottom: 3px;
   border-radius: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 10px;
 }
 
 nav {
@@ -33,7 +52,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: var(--nav-a-color);
 }
 
 nav li:has(a:hover){
@@ -57,4 +76,26 @@ caption-image {
 img {
   height: 200px;
   width: 200px;
+}
+
+.selection {
+  width: min(1000px, 90%);
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  color: var(--text-color)
+}
+
+select {
+  background-color: var(--select-background-color);
+  text-align: center;
+  color: var(--select-text-color);
+  border-radius: 5px;
+  border: 0px;
+  width: 80px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
