@@ -32,6 +32,7 @@ html {
 }
 
 .nav {
+  height: 39px;
   width: min(1000px, 90%);
   margin: auto;
   background-color: var(--nav-color);
@@ -101,4 +102,24 @@ select {
 
 contenthead {
   text-align: center;
+}
+
+@media only screen and (orientation:portrait) and (max-device-width: 480px){
+  html {
+    font-size: 35px;
+  }
+  
+  .nav {
+    height: 80px;
+    border-radius: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .selection select {
+    height: 40px;
+    width: 150px;
+    font-size: 27px;
+  }
 }
