@@ -104,6 +104,36 @@ contenthead {
   text-align: center;
 }
 
+content {
+  display: flex;
+  width: 100%;
+}
+
+sidebar {
+  border-radius: 10px;
+  background-color: var(--nav-color);
+  padding: 10px 30px 10px 10px;
+  
+}
+
+sidebar li {
+  display: block;
+}
+
+sidebar h3 {
+  text-align: center;
+  color: var(--nav-a-color);
+}
+
+sidebar a {
+  color: var(--nav-a-color);
+}
+
+main {
+  color: var(--text-color);
+  padding-left: 20px;
+}
+
 @media only screen and (orientation:portrait) and (max-device-width: 480px){
   html {
     font-size: 35px;
