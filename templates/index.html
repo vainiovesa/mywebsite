@@ -19,9 +19,15 @@
   </sidebar>
   <main>
     <h2>Vesa Vainio</h2>
-    <p>
-      Hello there!
-    </p>
+    {% if session.language == 'fi' %}
+      <p>
+        Suomeksi!
+      </p>
+    {% elif session.language == 'en' %}
+      <p>
+        In english!
+      </p>
+    {% endif %}
   </main>
 </content>
 {% endblock %}
