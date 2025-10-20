@@ -6,7 +6,11 @@
 <content>
   <sidebar>
     <contact>
-      <h3>Contact</h3>
+      {% if session.language == 'fi' %}
+        <h3>Ota yhteyttä</h3>
+      {% elif session.language == 'en' %}
+        <h3>Contact</h3>
+      {% endif %}
       <ul>
         <li>
           <a href="https://www.linkedin.com/in/vesavain/">LinkedIn</a>

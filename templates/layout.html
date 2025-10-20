@@ -10,18 +10,31 @@
 <body>
   <div class="nav">
     <nav>
-      <ul>
-        <li><a href="/">Etusivu</a></li>
-      </ul>
+      {% if session.language == 'fi' %}
+        <ul>
+          <li><a href="/">Etusivu</a></li>
+        </ul>
+      {% elif session.language == 'en' %}
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      {% endif %}
     </nav>
   </div>
 
   <div class="selection">
     <mode>
-      <select>
-        <option value="dark">Dark</option>
-        <option value="light">Light</option>
-      </select>
+      {% if session.language == 'fi' %}
+        <select>
+          <option value="dark">Tumma</option>
+          <option value="light">Vaalea</option>
+        </select>
+      {% elif session.language == 'en' %}
+        <select>
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+        </select>
+      {% endif %}
     </mode>
     <language>
       <a href="/languages/fi">Fi</a>
