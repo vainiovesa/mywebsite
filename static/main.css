@@ -163,4 +163,26 @@ main {
     width: 150px;
     font-size: 27px;
   }
+
+  .content {
+    height: 80vh;
+  }
+  
+  content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+  
+  sidebar ul {
+    margin-top: 5px;
+  }
+  
+  sidebar li {
+    display: inline-block;
+  }
+  
+  sidebar h3 {
+    margin-bottom: 0px;
+  }
 }
