@@ -90,8 +90,9 @@ img {
   height: auto;
 }
 
-video {
+#demo-gif {
   height: 80vh;
+  width: auto;
 }
 
 .selection {
@@ -222,7 +223,7 @@ content-index hr {
     width: 100%;
   }
 
-  video {
+  #demo-gif {
     width: 100%;
     height: auto;
   }
