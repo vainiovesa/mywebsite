@@ -31,6 +31,10 @@ html {
   width: min(1000px, 90%);
 }
 
+content main {
+  width: 100%;
+}
+
 .nav {
   height: 39px;
   width: min(1000px, 90%);
@@ -74,8 +78,17 @@ caption-image {
 }
 
 img {
-  height: 200px;
   width: 200px;
+  height: 200px;
+}
+
+#demo-img {
+  width: 49%;
+  height: auto;
+}
+
+video {
+  height: 80vh;
 }
 
 .selection {
@@ -145,7 +158,15 @@ main {
   padding-left: 20px;
 }
 
-hr {
+main li {
+  margin-bottom: 4px;
+}
+
+main a {
+  color: var(--text-color);
+}
+
+content-index hr {
   margin-right: 20px;
 }
 
@@ -174,7 +195,7 @@ hr {
   
   content-index {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
   }
   
@@ -190,7 +211,16 @@ hr {
     margin-bottom: 0px;
   }
 
-  hr {
+  content-index hr {
     margin-right: 0px;
+  }
+
+  #demo-img {
+    width: 100%;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
   }
 }

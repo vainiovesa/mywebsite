@@ -2,6 +2,9 @@
 
 {% block title %}Veskuvain{% endblock %}
 
+{% block curr1 %}index{% endblock %}
+{% block curr2 %}index{% endblock %}
+
 {% block content %}
 <content-index>
   <main>
@@ -16,17 +19,17 @@
         Erityisesti koneoppiminen ja tekoäly innostavat minua.
       </p>
       <p>
-        Tässä muutamia projektejani:
+        Tässä muutama projekteistani:
       </p>
       <ul>
         <li>
-          a
+          <a href="/cv-demo">Konenäön konseptitodistus</a>
         </li>
         <li>
-          b
+          <a href="/mpew-demo">Pörssisähkön hintavahti</a>
         </li>
         <li>
-          c
+          <a href="https://github.com/vainiovesa/neural-network">Yleiskäyttöinen neuroverkko</a>
         </li>
       </ul>
     {% elif session.language == 'en' %}
@@ -42,13 +45,13 @@
       </p>
       <ul>
         <li>
-          a
+          <a href="/cv-demo">Computer Vision Proof of Concept</a>
         </li>
         <li>
-          b
+          <a href="/mpew-demo">Market Price Electricity Watch</a>
         </li>
         <li>
-          c
+          <a href="https://github.com/vainiovesa/neural-network">General Purpose Neural Network</a>
         </li>
       </ul>
     {% endif %}

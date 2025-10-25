@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}CV Demo{% endblock %}
+
+{% block curr1 %}mpew-demo{% endblock %}
+{% block curr2 %}mpew-demo{% endblock %}
+
+{% block content %}
+<content>
+  <main>
+    <contenthead>
+      {% if session.language == 'fi' %}
+        <h2>Pörssisähkön hintavahti</h2>
+      {% elif session.language == 'en' %}
+        <h2>Market Price Electricity Watch</h2>
+      {% endif %}
+      <hr/>
+    </contenthead>
+      {% if session.language == 'fi' %}
+        <p>
+          Tässä projektissa
+        </p>
+      {% elif session.language == 'en' %}
+        <p>
+          In this project,
+        </p>
+      {% endif %}
+  </main>
+</content>
+{% endblock %}

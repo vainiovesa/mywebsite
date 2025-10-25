@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}CV Demo{% endblock %}
+
+{% block curr1 %}cv-demo{% endblock %}
+{% block curr2 %}cv-demo{% endblock %}
+
+{% block content %}
+<content>
+  <main>
+    <contenthead>
+      {% if session.language == 'fi' %}
+        <h2>Konenäön konseptitodistus</h2>
+      {% elif session.language == 'en' %}
+        <h2>Computer Vision Proof of Concept</h2>
+      {% endif %}
+      <hr/>
+    </contenthead>
+      {% if session.language == 'fi' %}
+        <p>
+          Tässä projektissa tein kynttilätehtaalle konseptitodistuksen konenäköohjelmasta, joka
+          tunnistaa automaattisesti epämuodostuneet kynttilät linjastolta. Toteutin fyysisen puolen
+          <a href="https://en.wikipedia.org/wiki/Raspberry_Pi_4">Raspberry Pi 4</a> -minitietokoneella
+          ja kameramoduulilla. Kameran kuvaa käsitteli <a href="https://opencv.org/">OpenCV</a> ja
+          kuvantunnistus tapahtui <a href="https://github.com/vainiovesa/neural-network">itse
+          implementoimallani neuroverkolla</a>.
+        </p>
+      {% elif session.language == 'en' %}
+        <p>
+          In this project, I created a proof of concept for a computer vision program for a candle
+          factory that automatically detects deformed candles on the production line. I implemented the
+          physical setup using a <a href="https://en.wikipedia.org/wiki/Raspberry_Pi_4">
+          Raspberry Pi 4</a> mini-computer and a camera module. The camera image was processed with
+          <a href="https://opencv.org/">OpenCV</a>, and image recognition was performed using a
+          <a href="https://github.com/vainiovesa/neural-network">neural network I implemented myself</a>.
+        </p>
+      {% endif %}
+      <img id="demo-img" src="/static/ok-candle.jpg" alt="Detection of ok candle">
+      <img id="demo-img" src="/static/not-ok-candle.jpg" alt="Detection of not ok candle">
+
+      <video src="/static/candle-demo.mp4" controls>What Raspi sees</video>
+  </main>
+</content>
+{% endblock %}

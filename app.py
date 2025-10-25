@@ -11,18 +11,30 @@ def index():
     language_default()
     return render_template("index.html")
 
+@app.route("/index")
+def index_reroute():
+    return redirect("/")
+
 @app.route("/sus")
 def test():
     return render_template("test.html")
 
-@app.route("/languages/<choice>")
-def languages(choice):
+@app.route("/languages/<source>/<choice>")
+def languages(source, choice):
     session["language"] = "fi"
 
     if choice == "en":
         session["language"] = "en"
 
-    return redirect("/")
+    return redirect(f"/{source}")
+
+@app.route("/cv-demo")
+def computer_vision():
+    return render_template("computer_vision.html")
+
+@app.route("/mpew-demo")
+def market_ecetricity():
+    return render_template("market_electricity.html")
 
 @app.errorhandler(404)
 def not_found(e):
