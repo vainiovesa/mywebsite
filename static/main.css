@@ -1,6 +1,9 @@
 html {
-    background-color: var(--background-color);
-    --nav-a-color: white;
+  --nav-color: #505055;
+  --background-color: #020202;
+  --text-color: white;
+  background-color: var(--background-color);
+  --nav-a-color: white;
 }
 
 body {

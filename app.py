@@ -18,6 +18,7 @@ def index_reroute():
 
 @app.route("/sus")
 def test():
+    language_default()
     return render_template("test.html")
 
 @app.route("/languages/<source>/<choice>")
@@ -31,10 +32,13 @@ def languages(source, choice):
 
 @app.route("/cv-demo")
 def computer_vision():
+    language_default()
     return render_template("computer_vision.html")
 
 @app.route("/mpew-demo")
 def market_ecetricity():
+    language_default()
+
     current_time, price, light_control = get_info()
     info = {"rb": RED_BOUNDARY,
             "yb": YELLOW_BOUNDARY,
