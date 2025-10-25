@@ -1,5 +1,6 @@
 from flask import Flask, session, render_template, redirect
 from werkzeug.middleware.proxy_fix import ProxyFix
+from demo_src.control import get_info, RED_BOUNDARY, YELLOW_BOUNDARY
 import config
 
 app = Flask(__name__)
@@ -34,7 +35,13 @@ def computer_vision():
 
 @app.route("/mpew-demo")
 def market_ecetricity():
-    return render_template("market_electricity.html")
+    current_time, price, light_control = get_info()
+    info = {"rb": RED_BOUNDARY,
+            "yb": YELLOW_BOUNDARY,
+            "price": price,
+            "ct": current_time}
+
+    return render_template("market_electricity.html", lights=light_control, info=info)
 
 @app.errorhandler(404)
 def not_found(e):

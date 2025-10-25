@@ -18,13 +18,42 @@
     </contenthead>
       {% if session.language == 'fi' %}
         <p>
-          Tässä projektissa
+          Tässä projektissa käytän <a href="https://transparency.entsoe.eu/">ENTSO-E Transparency Platform</a>
+          API-rajapintaa Suomen pörssisähkön hinnan selvittämiseen. Hinnan avulla kontrolloidaan liikennevaloja,
+          joista näkee kätevästi, kannattaako sähköä kuluttaa juuri nyt. Otin liikennevalot tänne näytille, mutta
+          niiden lähdekoodin näkee
+          <a href="https://github.com/vainiovesa/market-price-electricity-watch">GitHubistani</a>.
+        </p>
+        <p>
+          Nämä liikennevalot toimivat seuraavalla periaatteella: Jos hinta on alhainen, palaa vihreä valo. Jos
+          hinta ylittää <b>{{ info.yb }}</b> senttiä, syttyy keltainen valo ja jos hinta on
+          korkeampi, kuin <b>{{ info.rb }}</b> senttiä, palaa punainen valo. Hinta hettiin <b>{{ info.ct }}</b>,
+          jolloin hinta oli <b>{{ info.price }} senttiä / kWh</b>.
         </p>
       {% elif session.language == 'en' %}
         <p>
-          In this project,
+          In this project, I use the <a href="https://transparency.entsoe.eu/">ENTSO-E Transparency Platform</a>
+          API to retrieve the market electricity price in Finland. The price is used to control a set of traffic
+          lights that conveniently indicate whether it's a good time to consume electricity. I've brought the
+          traffic lights here for display, but their source code can be found on
+          <a href="https://github.com/vainiovesa/market-price-electricity-watch">my GitHub</a>.
+        </p>
+        <p>
+          These traffic lights operate on the following principle: if the price is low, the green light is on.
+          If the price exceeds <b>{{ info.yb }}</b> cents, the yellow light turns on, and if the price is higher
+          than <b>{{ info.rb }}</b> cents, the red light is on. The price was fetched at <b>{{ info.ct }}</b>,
+          at which time the price was <b>{{ info.price }} cents / kWh</b>.
         </p>
       {% endif %}
+    <traffic-lights>
+      <housing>
+        <inner>
+          <face class="r" {% if lights["r"] %}id="active"{% endif %}></face>
+          <face class="y" {% if lights["y"] %}id="active"{% endif %}></face>
+          <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
+        </inner>
+      </housing>
+    </traffic-lights>
   </main>
 </content>
 {% endblock %}
