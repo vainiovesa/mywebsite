@@ -4,6 +4,55 @@
 
 {% block content %}
 <content-index>
+  <main>
+    <h2>Vesa Vainio</h2>
+    <hr/>
+    {% if session.language == 'fi' %}
+      <p>
+        Hei!
+      </p>
+      <p>
+        Olen tietojenkäsittelytieteen opiskelija Helsingin Yliopistossa.
+        Erityisesti koneoppiminen ja tekoäly innostavat minua.
+      </p>
+      <p>
+        Tässä muutamia projektejani:
+      </p>
+      <ul>
+        <li>
+          a
+        </li>
+        <li>
+          b
+        </li>
+        <li>
+          c
+        </li>
+      </ul>
+    {% elif session.language == 'en' %}
+      <p>
+        Hello there!
+      </p>
+      <p>
+        I am a Computer Science Student at the University of Helsinki.
+        Especially machine learning and artificial intelligence inspire me. 
+      </p>
+      <p>
+        Here's some of my projects:
+      </p>
+      <ul>
+        <li>
+          a
+        </li>
+        <li>
+          b
+        </li>
+        <li>
+          c
+        </li>
+      </ul>
+    {% endif %}
+  </main>
   <sidebar>
     <contact>
       {% if session.language == 'fi' %}
@@ -21,17 +70,5 @@
       </ul>
     </contact>
   </sidebar>
-  <main>
-    <h2>Vesa Vainio</h2>
-    {% if session.language == 'fi' %}
-      <p>
-        Suomeksi!
-      </p>
-    {% elif session.language == 'en' %}
-      <p>
-        In english!
-      </p>
-    {% endif %}
-  </main>
 </content-index>
 {% endblock %}

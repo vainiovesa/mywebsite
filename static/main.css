@@ -145,6 +145,10 @@ main {
   padding-left: 20px;
 }
 
+hr {
+  margin-right: 20px;
+}
+
 @media only screen and (orientation:portrait) and (max-device-width: 480px){
   html {
     font-size: 35px;
@@ -184,5 +188,9 @@ main {
   
   sidebar h3 {
     margin-bottom: 0px;
+  }
+
+  hr {
+    margin-right: 0px;
   }
 }
