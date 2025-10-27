@@ -20,29 +20,39 @@
         <p>
           Tässä projektissa käytän <a href="https://transparency.entsoe.eu/">ENTSO-E Transparency Platform</a>
           API-rajapintaa Suomen pörssisähkön hinnan selvittämiseen. Hinnan avulla kontrolloidaan liikennevaloja,
-          joista näkee kätevästi, kannattaako sähköä kuluttaa juuri nyt. Otin liikennevalot tänne näytille, mutta
-          niiden lähdekoodin näkee
-          <a href="https://github.com/vainiovesa/market-price-electricity-watch">GitHubistani</a>.
+          joista näkee kätevästi, kannattaako sähköä kuluttaa juuri nyt. Otin liikennevalot tänne näytille ja
+          niiden lähdekoodi on nähtävillä
+          <a href="https://github.com/vainiovesa/market-price-electricity-watch">GitHub -tililläni</a>.
         </p>
         <p>
-          Nämä liikennevalot toimivat seuraavalla periaatteella: Jos hinta on alhainen, palaa vihreä valo. Jos
-          hinta ylittää <b>{{ info.yb }}</b> senttiä, syttyy keltainen valo ja jos hinta on
-          korkeampi, kuin <b>{{ info.rb }}</b> senttiä, palaa punainen valo. Hinta haettiin <b>{{ info.ct }}</b>,
-          jolloin hinta oli <b>{{ info.price }} senttiä / kWh</b>.
+          Liikennevalot toimivat seuraavasti:
+        </p>
+        <ul>
+          <li>Kun hinta on alhainen, palaa vihreä valo.</li>
+          <li>Jos hinta ylittää <b>{{ info.yb }}</b> senttiä, syttyy keltainen valo.</li>
+          <li>Jos hinta ylittää <b>{{ info.rb }}</b> senttiä, palaa punainen valo.</li>
+        </ul>
+        <p>
+          Hinta haettiin <b>{{ info.ct }}</b>, jolloin hinta oli <b>{{ info.price }} senttiä / kWh</b>.
         </p>
       {% elif session.language == 'en' %}
         <p>
           In this project, I use the <a href="https://transparency.entsoe.eu/">ENTSO-E Transparency Platform</a>
           API to retrieve the market electricity price in Finland. The price is used to control a set of traffic
           lights that conveniently indicate whether it's a good time to consume electricity. I've brought the
-          traffic lights here for display, but their source code can be found on
+          traffic lights here for display and you can view their source code on
           <a href="https://github.com/vainiovesa/market-price-electricity-watch">my GitHub</a>.
         </p>
         <p>
-          These traffic lights operate on the following principle: if the price is low, the green light is on.
-          If the price exceeds <b>{{ info.yb }}</b> cents, the yellow light turns on, and if the price is higher
-          than <b>{{ info.rb }}</b> cents, the red light is on. The price was fetched at <b>{{ info.ct }}</b>,
-          at which time the price was <b>{{ info.price }} cents / kWh</b>.
+          The traffic lights operate as follows:
+        </p>
+        <ul>
+          <li>When the price is low, the green light is on.</li>
+          <li>If the price exceeds <b>{{ info.yb }}</b> cents, the yellow light turns on.</li>
+          <li>If the price exceeds <b>{{ info.rb }}</b> cents, the red light appears.</li>
+        </ul>
+        <p>
+          The price was fetched at <b>{{ info.ct }}</b>, at which time the price was <b>{{ info.price }} cents / kWh</b>.
         </p>
       {% endif %}
     <traffic-lights>
