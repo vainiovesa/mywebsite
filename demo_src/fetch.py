@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 import entsoe
 import pandas as pd
+import pytz
 import demo_src.config as config
 
 API_KEY = config.api_key
@@ -36,7 +37,13 @@ def _read():
 
 def get_price_now(current_time:datetime):
     date = current_time.strftime("%Y-%m-%d")
-    check = date + " 00:15:00+03:00"
+
+    timezone = pytz.timezone("Europe/Helsinki")
+    timezone_offset = timezone.localize(current_time)
+    timezone_offset = str(timezone_offset.utcoffset())
+    timezone_offset = timezone_offset[:4]
+
+    check = date + " 00:15:00+0" + timezone_offset
     data = _read()
 
     if check not in data:
@@ -51,7 +58,7 @@ def get_price_now(current_time:datetime):
         if int(interval) <= int(current_time.minute):
             last_quart = interval
 
-    fetchtime = f"{date} {current_time.hour}:{last_quart}:00+03:00"
+    fetchtime = f"{date} {current_time.hour}:{last_quart}:00+0" + timezone_offset
     current_price = float(data[fetchtime])
 
     return current_price
