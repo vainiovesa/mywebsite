@@ -162,6 +162,10 @@ main {
   padding-left: 20px;
 }
 
+content-index main p, content-index main li {
+  max-width: 95%;
+}
+
 main li {
   margin-bottom: 4px;
 }
