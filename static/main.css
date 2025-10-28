@@ -138,6 +138,10 @@ language a {
   color: var(--nav-a-color);
 }
 
+language :not(#active) {
+  text-decoration: none;
+}
+
 sidebar {
   border-radius: 10px;
   background-color: var(--nav-color);
@@ -281,7 +285,7 @@ face {
   background-color: #008000;
 }
 
-#active {
+traffic-lights #active {
   filter: brightness(200%);
   border: 2px solid white;
   box-shadow: 0 0 10px white;

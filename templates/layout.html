@@ -37,8 +37,8 @@
       {% endif %}
     </mode>
     <language>
-      <a href="/languages/{% block curr1 %}{% endblock %}/fi">Fi</a>
-      <a href="/languages/{% block curr2 %}{% endblock %}/en">En</a>
+      <a {% if session.language == 'fi' %}id="active"{% endif %} href="/languages/{% block curr1 %}{% endblock %}/fi">Fi</a>
+      <a {% if session.language == 'en' %}id="active"{% endif %} href="/languages/{% block curr2 %}{% endblock %}/en">En</a>
     </language>
   </div>
 
