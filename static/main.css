@@ -148,16 +148,16 @@ sidebar {
   padding: 10px 30px 10px 20px;
 }
 
-sidebar li {
-  display: block;
+contact li {
+  display: inline-block;
 }
 
-sidebar h3 {
+contact h3 {
   text-align: center;
   color: var(--nav-a-color);
 }
 
-sidebar a {
+contact a {
   color: var(--nav-a-color);
 }
 
