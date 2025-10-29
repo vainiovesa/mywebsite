@@ -38,12 +38,19 @@ def computer_vision():
 @app.route("/mpew-demo")
 def market_ecetricity():
     language_default()
-
-    current_time, price, light_control = get_info()
-    info = {"rb": RED_BOUNDARY,
-            "yb": YELLOW_BOUNDARY,
-            "price": price,
-            "ct": current_time}
+    
+    try:
+        current_time, price, light_control = get_info()
+        info = {"rb": RED_BOUNDARY,
+                "yb": YELLOW_BOUNDARY,
+                "price": price,
+                "ct": current_time}
+    except:
+        light_control = None
+        info = {"rb": RED_BOUNDARY,
+                "yb": YELLOW_BOUNDARY,
+                "price": None,
+                "ct": None}
 
     return render_template("market_electricity.html", lights=light_control, info=info)
 

@@ -32,9 +32,15 @@
           <li>Jos hinta ylittää <b>{{ info.yb }}</b> senttiä, syttyy keltainen valo.</li>
           <li>Jos hinta ylittää <b>{{ info.rb }}</b> senttiä, palaa punainen valo.</li>
         </ul>
-        <p>
-          Hinta haettiin <b>{{ info.ct }}</b>, jolloin hinta oli <b>{{ info.price }} senttiä / kWh</b>.
-        </p>
+        {% if not info.price %}
+          <p>
+            Juuri nyt haussa tapahtui virhe.
+          </p>
+        {% else %}
+          <p>
+            Hinta haettiin <b>{{ info.ct }}</b>, jolloin hinta oli <b>{{ info.price }} senttiä / kWh</b>.
+          </p>
+        {% endif %}
       {% elif session.language == 'en' %}
         <p>
           In this project, I use the <a href="https://transparency.entsoe.eu/">ENTSO-E Transparency Platform</a>
@@ -51,9 +57,15 @@
           <li>If the price exceeds <b>{{ info.yb }}</b> cents, the yellow light turns on.</li>
           <li>If the price exceeds <b>{{ info.rb }}</b> cents, the red light appears.</li>
         </ul>
-        <p>
-          The price was fetched at <b>{{ info.ct }}</b>, at which time the price was <b>{{ info.price }} cents / kWh</b>.
-        </p>
+        {% if not info.price %}
+          <p>
+            An exception occured while fetching the price.
+          </p>
+        {% else %}
+          <p>
+            The price was fetched at <b>{{ info.ct }}</b>, at which time the price was <b>{{ info.price }} cents / kWh</b>.
+          </p>
+        {% endif %}
       {% endif %}
     <traffic-lights>
       <housing>
