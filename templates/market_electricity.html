@@ -24,6 +24,15 @@
           niiden lähdekoodi on nähtävillä
           <a href="https://github.com/vainiovesa/market-price-electricity-watch">GitHub -tililläni</a>.
         </p>
+        <traffic-lights>
+          <housing>
+            <inner>
+              <face class="r" {% if lights["r"] %}id="active"{% endif %}></face>
+              <face class="y" {% if lights["y"] %}id="active"{% endif %}></face>
+              <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
+            </inner>
+          </housing>
+        </traffic-lights>
         <p>
           Liikennevalot toimivat seuraavasti:
         </p>
@@ -49,6 +58,15 @@
           traffic lights here for display and you can view their source code on
           <a href="https://github.com/vainiovesa/market-price-electricity-watch">my GitHub</a>.
         </p>
+        <traffic-lights>
+          <housing>
+            <inner>
+              <face class="r" {% if lights["r"] %}id="active"{% endif %}></face>
+              <face class="y" {% if lights["y"] %}id="active"{% endif %}></face>
+              <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
+            </inner>
+          </housing>
+        </traffic-lights>
         <p>
           The traffic lights operate as follows:
         </p>
@@ -67,15 +85,6 @@
           </p>
         {% endif %}
       {% endif %}
-    <traffic-lights>
-      <housing>
-        <inner>
-          <face class="r" {% if lights["r"] %}id="active"{% endif %}></face>
-          <face class="y" {% if lights["y"] %}id="active"{% endif %}></face>
-          <face class="g" {% if lights["g"] %}id="active"{% endif %}></face>
-        </inner>
-      </housing>
-    </traffic-lights>
   </main>
 </content>
 {% endblock %}
