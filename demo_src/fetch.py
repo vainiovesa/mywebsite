@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 import entsoe
 import pandas as pd
-import pytz
 import demo_src.config as config
 
 API_KEY = config.api_key
@@ -24,6 +23,7 @@ def _get_todays_prices():
 def _write(prices:dict):
     with open("demo_src/todays_prices.csv", "w") as file:
         for timestamp, price in prices.items():
+            timestamp = str(timestamp).split("+")[0] # Get rid of time zone offset
             row = f"{timestamp};{price}"
             file.write(row + "\n")
 
@@ -38,12 +38,7 @@ def _read():
 def get_price_now(current_time:datetime):
     date = current_time.strftime("%Y-%m-%d")
 
-    timezone = pytz.timezone("Europe/Helsinki")
-    timezone_offset = timezone.localize(current_time)
-    timezone_offset = str(timezone_offset.utcoffset())
-    timezone_offset = timezone_offset[:4]
-
-    check = date + " 00:15:00+0" + timezone_offset
+    check = date + " 00:15:00"
     data = _read()
 
     if check not in data:
@@ -58,7 +53,9 @@ def get_price_now(current_time:datetime):
         if int(interval) <= int(current_time.minute):
             last_quart = interval
 
-    fetchtime = f"{date} {current_time.hour}:{last_quart}:00+0" + timezone_offset
+    hour = current_time.hour
+    hour = str(hour) if hour > 9 else "0" + str(hour)
+    fetchtime = f"{date} {hour}:{last_quart}:00"
     current_price = float(data[fetchtime])
 
     return current_price
