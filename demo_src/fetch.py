@@ -4,7 +4,7 @@ import pandas as pd
 import demo_src.config as config
 
 API_KEY = config.api_key
-CLIENT = entsoe.EntsoePandasClient(API_KEY)
+CLIENT = entsoe.EntsoePandasClient(API_KEY, retry_count=2, retry_delay=2, timeout=10)
 
 def _get_todays_prices():
     today = datetime.now()
